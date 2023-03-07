@@ -1,0 +1,399 @@
+body {
+    background-image: linear-gradient(to right, #ffffff, #fbfbfc, #f6f8fa, #f1f5f7, #ecf2f3);
+}
+body {
+    font-family: Cereal,sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+    min-width: 320px;
+    margin: 0;
+    background-size: contain;
+}
+body {
+    display: block;
+    margin: 8px;
+}
+.navbar-brand{
+cursor: pointer;
+color: #2f2660;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 28px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.navbar-brand:hover,span.lang:hover,.nav-link:hover,.breadcrumb li a:hover,h5:hover,p:hover,h5.card-title:hover,p.card-text:hover,marquee:hover,span:hover,hr:hover{
+color:#e70047;
+}
+.nav-link,.btn,span.lang
+   {
+text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: .7em;
+    margin-right: 15px;
+    color: #000;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.breadcrumb li a {
+    text-decoration: none;
+    color: #002140;
+}
+.breadcrumb {
+     list-style: none;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+    padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; 
+    
+    }
+    .breadcrumb-item.active,marquee {
+        color: #000;
+
+    }
+    a.btn btn-outline-danger btn-rounded{
+        text-transform: capitalize;
+    }
+    .wrapper {
+        max-width: 1300px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .categories-head .tip {
+        margin-top: 10px;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 135.6%;
+        max-width: 500px;
+        color: #FFFFFF;
+    }
+   div.tip{
+    font-weight: 500;
+
+   }
+    .categories-head {
+        min-height: 200px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 60px 30px;
+        display: grid;
+        border-radius: 20px;
+        position: relative;
+        background: #6888a6 url(../img/banner.jpeg) no-repeat 100%;
+        background-size: auto 250px;
+        margin-bottom: 50px;
+    }
+    .categories-head h1 {
+        text-align: left;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 39px;
+        line-height: 89.6%;
+        padding-top: 20px;
+        color: #FFF;
+    }h1 {
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+    div#mydiv,div#mydiv1,div#mydiv2,div#mydiv3{
+        padding-top: 40px;
+        margin-left: 10%;
+        margin-right: 20px;
+    }
+    div.mydiv{
+        padding-top:5em;
+    }
+  .card{
+        width: 95%;
+        word-spacing: normal;
+        white-space:nowrap;
+        border-radius: 2em;
+    }
+     div.carousel-item{
+        width: 60em;
+         margin-left: 20%;
+        /* margin-right:10%;  */
+    } 
+    p.card-text {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #6888a6;
+    height: 42px;
+    width: 100%;
+
+    }
+    h5.card-title{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: .7em;
+    color: #000;
+    }
+  footer{
+      padding-top: 20px;
+      padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+ span
+ {
+  color: #000;
+ }#regmod{
+     color: #ffffff;
+     background-color: #6888a6;
+ }
+div#install,div#use{
+    background-color: #ffffff;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+
+   .nav-link.active:hover,.nav-link:hover {
+    color:orangered;
+    border-bottom: 2px solid red;
+}
+  .nav-tabs{
+    border-bottom: none;
+    
+  }
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: red;
+    isolation: isolate;
+  }
+ 
+  .bold2 {
+    margin-top:10px;
+  }
+  .card-body {
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+  .card{
+    border-radius: 0;
+  }
+  :root {
+    
+    --color-invalid: red;
+    
+  }
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+div.modal-content
+{
+    background-color:#ebeef3;
+}
+
+div.modal-header
+{
+    background-color:#f5f6f8;
+    padding-left:30px;
+    height: 50px;
+}
+
+/* style for changing separator  */
+li,.breadcrumb-item + .breadcrumb-item::before 
+{
+    content: ">";
+    color:darkslateblue ;
+    
+}
+
+div.navigation-choice{
+    margin-right :20%;
+    padding-right: 50px;
+}
+.nav{
+    padding-left:13px;
+   
+}
+.navbar{
+    background-color: #fff;
+    /* height: 45px; */
+}
+
+
+  
+  #exTab1 .tab-content {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+  }
+  
+  #exTab2 h3 {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+  }
+  
+  /* remove border radius for the tab */
+  
+  #exTab1 .nav-pills > li > a {
+    border-radius: 0;
+  }
+  
+  /* change border radius for the tab , apply corners on top*/
+  
+  #exTab3 .nav-pills > li > a {
+    border-radius: 4px 4px 0 0 ;
+  }
+  
+  #exTab3 .tab-content {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+  }
+  
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active,.nav-link {
+    color: #000000;
+  }
+  .nav-tabs .nav-link{
+    border: none;
+  }
+
+   .nav-link.active:hover,.nav-link:hover {
+    color:orangered;
+    border-bottom: 2px solid red;
+}
+  .nav-tabs{
+    border-bottom: none;
+    
+  }
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: red;
+    isolation: isolate;
+  }
+ 
+  .bold2 {
+    margin-top:10px;
+  }
+  .card-body {
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+  .card{
+    border-radius: 0;
+  }
+  :root {
+    
+    --color-invalid: red;
+    
+  }
+  input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: var(--color-invalid);
+  }
+  input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+    display: block; 
+  }
+  .col-sm-4.p-3{
+    border-left: 1px solid #dee2e6;
+  }
+  .avatar-wrapper{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    /* margin: 50px auto; */
+    border-radius: 80%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px -5px black;
+    transition: all .3s ease;
+  }
+  .avatar-wrapper:hover{
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+    .avatar-wrapper:hover .profile-pic{
+      opacity: .5;
+    }
+    .profile-pic {
+      height: 100%;
+      width: 100%;
+      transition: all .3s ease;
+    }
+    .profile-pic:after{
+        font-family: FontAwesome;
+        content: "\f007";
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        font-size: 190px;
+        background: #ecf0f1;
+        color: #34495e;
+        text-align: center;
+      }
+    
+    .upload-button {
+      position: absolute;
+      top: 0; left: 0;
+      height: 10px;
+      width: 10px;
+    }
+      .fa-arrow-circle-up{
+        position: absolute;
+        font-size: 234px;
+        top: -17px;
+        left: 0;
+        text-align: center;
+        opacity: 0;
+        transition: all .3s ease;
+        color: #34495e;
+      }
+      .fa-arrow-circle-up:hover .fa-arrow-circle-up{
+        opacity: .9;
+      }
+    
+      .fa-regular.fa-user {
+       
+        margin-left: 28px;
+        margin-top: 15px;
+      }
+     
+
+      .btn.btn-outline-success.btn-floating {
+        border-radius: 50px;
+      }
+      .btn-outline-primary{
+        color: #0d6efd;
+        border: none;
+        margin-left: -10px;
+      }
+      .btn-outline-primary:hover{
+        border: none;
+        background-color:#fff;
+        color: #0d6efd;
+      }
+      #modalLoginForm,#modalLoginForm2,#modalEmployer,#modalEdu,#modalCompensation,#modalBonus,#modalStocks,#modalBank {
+        background: #718fa9;
+      }
+      .text-center {
+  
+        text-align:inherit;
+      }
+    span.placeholder{
+      background-color: #fff;
+      color: #000000;
+      opacity:1;
+    }
+    .ss-main .ss-single-selected{
+      height: 40px;
+    }

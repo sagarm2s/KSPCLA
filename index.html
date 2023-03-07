@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Mixed Cursors Extensions</title>
+    <!-- icon -->
+    <link rel="icon" href="img/logo1.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link  rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/Style.css" />
+    <link rel="stylesheet" href="css/style.scss">
+    <script src="js/language.js"></script>
+    <script src="js/Validation.js"></script>
+    <script src="https://kit.fontawesome.com/92578ed81b.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    
+    <style>
+      span.required:after {
+          /* content: " *"; */
+          color: red;
+      }
+      
+      .ss-main .ss-single- {
+          height: 40px;
+      }
+      
+      span.placeholder {
+          background-color: #fff;
+          color: #000000;
+          opacity: 1;
+          cursor: pointer;
+      }
+  </style>
+  </head>
+  <body>
+    <!-- NavBar Begin -->
+<nav class="navbar navbar-expand-lg ">
+  <!-- Container wrapper Begin -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ID Card Generator</a>
+    
+
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarRightAlignExample"
+      aria-controls="navbarRightAlignExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper Begin -->
+    <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+     
+      <!-- Navigation links Begin -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="./html/auth-login-basic.html">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <span class="lang">Language:</span>
+          <select name="lng" id="lng" onchange="location.reload(window.location = this.options[this.selectedIndex].value)">
+            <option value="#googtrans(en|en)"> English To English
+            </option>
+            <option value="#googtrans(en|kn)"> English To Kannada
+            </option>
+            <!-- <option value="#googtrans(kn|en)"> Kannada To English
+            </option> -->
+
+            
+          </select>
+        </li>
+
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+          }
+          </script>
+          
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+          
+
+          <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/O4xzMiFqEvA4YhWjk5t8Xuas/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-BV3s7GUfZmQoCIeDGjziAdN7XaXIsvdr5vFHzcjc0OWrVIEdrNeQuwqNeGmL4mWq"></script><script>
+              document.addEventListener('DOMContentLoaded', function() {
+                  setTimeout(function(){
+                      const url = window.location.href;
+
+                      const lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+                      if (lang === 'en') {
+                          document.getElementById("google_translate_element").value = '#googtrans(en|en)';
+                      } else if (lang === 'kn') {
+                          document.getElementById("google_translate_element").value ='#googtrans(en|kn)';
+                      } 
+                      console.log(lang);
+                  }, 5000);
+              }, false);
+
+          </script>
+      </ul>
+      <!-- Navigation links -->
+    </div>
+    <!-- Collapsible wrapper End -->
+  </div>
+  <!-- Container wrapper End-->
+</nav>
+    <!-- NavBar End -->
+
+    <!-- Breadcrumb Begin -->
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Register</li>
+      </ol>
+    </nav>
+    <!-- Breadcrumb End -->
+
+    
+    <section>
+      <div class="wrapper">
+        <div class="categories-head">
+          <h1>ID CARD GENERATION PORTAL</h1>
+          <div class="tip">view of ID Card is in the colletion - just click on "Register To Become a Member" button.
+          </div>
+
+          <div class="container-fluid mt-3">
+
+           <button type="button" id="regmod" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+           Click Here To Register Yourself On Portal
+        </button>
+    
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- NavBar End -->
+
+<!-- Modal -->
+<form id="formAuthentication" method="post" onsubmit="return validateform()">
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down modal-dialog-scrollable"> -->
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen modal-fullscreen-sm-down modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Membership Registration Form</h5>
+          <button type="button" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-regular fa-circle-xmark fa-xl"></i>
+          </button>
+  
+        </div>
+        <div class="modal-body">
+          <div class="row my-3 mx-3 rounded-lg bg-white">
+            <div class="col-12 py-4 px-3">
+              <label class="block text-sm font-medium text-gray-700">
+                Name Of The Lecturer
+            </label>
+                <div class="row justify-content-around">
+                    <div class="col-sm-12 col-md-12 mb-3">
+                        <label class="form-label" for="employeeFirstName"><span
+                            class="required">Full Name</span></label>
+                        <input type="text" id="employeeFirstName" name="full_name" value='' onkeydown="return myf(event)"class="form-control"  /><b id="error" style="color:red;display:none">Plese Enter Only Alphabets Not Special Character and Spaces Allowed..</b>
+                    </div>
+                 
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 mb-3">
+              <label class="form-label" for="employeeDisplayName">Content, Subject</label>
+              <input type="text" id="employeeDisplayName" name="content_subject" class="form-control" />
+          </div>
+          <div class="col-sm-12 col-md-12 mb-3">
+            <label class="form-label" for="employeeDisplayName">Eligibility</label>
+            <input type="text" id="employeeDisplayName" name="eligibility" class="form-control" />
+        </div>
+        
+          <div class="col-12 py-4 px-3">
+            <label class="block text-sm font-medium text-gray-700">
+              College Address anc College Code
+          </label>
+              <div class="col-sm-12 col-md-12 mb-3">
+                <label class="form-label" for="employeeHomeStreetName">Street Name</label>
+                <input type="text" id="employeeHomeStreetName" name="clg_street_name" class="form-control" />
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 mb-3">
+            <label class="form-label" for="employeeHomeState">State</label>
+            <select id="employeeHomeState" onchange="print_city('employeeHomeCity', this.selectedIndex);" name="clg_state" class="form-control">
+                <option value="none">Choose</option>
+            </select>
+        </div>
+        <div class="col-sm-12 col-md-6 mb-3">
+            <label class="form-label" for="employeeHomeCity">City</label>
+            <select id="employeeHomeCity" name="clg_city" class="form-control"></select>
+        </div>
+        <script language="javascript">
+            print_state("employeeHomeState");
+        </script>
+  
+  <div class="col-sm-12 col-md-4 mb-3">
+    <label class="form-label" for="employeeHomeCity">Country</label>
+    <select id="employeeHomeCountry" class="form-control" name="clg_contry">
+      <option value="India">India</option>
+    </select>
+  </div>
+  
+  <div class="col-sm-12 col-md-4 mb-3">
+    <label class="form-label" for="employeeHomeCity">Zip Code</label>
+    <input type="text" id="employeeZipCode" name="clg_zip_code" class="form-control" />
+  </div>
+  
+  <div class="col-sm-12 col-md-4 mb-3">
+    <label class="form-label" for="employeeHomeCity">College Code</label>
+    <input type="text" id="employeeZipCode" name="clg_code" class="form-control" />
+  </div>
+  
+  <div class="col-12 py-4 px-3">
+    <label class="block text-sm font-medium text-gray-700">
+      Residential Address
+  </label>
+      <div class="col-sm-12 col-md-12 mb-3">
+        <label class="form-label" for="employeeHomeStreetName">Street Name</label>
+        <input type="text" id="employeeHomeStreetName" name="emp_street_name" class="form-control" />
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 mb-3 employeeCommunicationAddress">
+    <label class="form-label" for="employeeCommunicationState">State</label>
+    <select id="employeeCommunicationState" name="emp_state" onchange="print_city('employeeCommunicationCity', this.selectedIndex);" name="employeeCommunicationState" class="form-control">
+        <option value="none" >Choose</option>
+    </select>
+  </div>
+  <div class="col-sm-12 col-md-6 mb-3 employeeCommunicationAddress">
+    <label class="form-label" for="employeeCommunicationCity">City</label>
+    <select id="employeeCommunicationCity" name="emp_city" class="form-control"></select>
+  </div>
+  <script language="javascript">
+    print_state("employeeCommunicationState");
+  </script>
+  
+  
+  <div class="col-sm-12 col-md-6 mb-3">
+  <label class="form-label" for="employeeHomeCity">Country</label>
+  <select id="employeeHomeCountry" name="emp_contry" class="form-control">
+  <option value="India">India</option>
+  </select>
+  </div>
+  
+  <div class="col-sm-12 col-md-6 mb-3">
+  <label class="form-label" for="employeeHomeCity">Zip Code</label>
+  <input type="text" id="employeeZipCode" name="emp_zip_code" class="form-control" />
+  </div>
+  
+  <div class="col-sm-12 col-md-6 mb-3">
+    <label class="form-label" for="employeeOfficialNumber"><span
+        class="required">Contact Number</span></label>
+    <input type="text" id="employeeOfficialNumber" name="emp_contact"  value=''
+    onkeypress='return isNumber(event)' minlength="10" maxlength="10"  class="form-control" /><span id="error" style="color:red;display:none">Plese Enter Only Alphabets...</span>
+  </div>
+  <div class="col-sm-12 col-md-6 mb-3">
+    <label class="form-label" for="employeeAlternateMobile">Alternate Contact Number</label>
+    <input type="text" id="employeeAlternateMobile" value=''
+    onkeypress='javascript: return isNumber(event)' name="emp_alt_contact" minlength="10" maxlength="10" class="form-control" />
+  </div>
+  <div class="col-sm-12 col-md-6 mb-3">
+    <label class="form-label" for="employeeDateofJoin">Date
+        of Issue</label>
+    <input type="date" class="form-control" name="issue_date" id="employeeDateofJoin" />
+  </div>
+  <div class="col-sm-12 col-md-6 mb-3">
+    <label class="form-label" for="employeeDateofJoin">Date
+        of Joining Service</label>
+    <input type="date" class="form-control" name="joining_date" id="employeeDateofJoin" />
+  </div>
+  
+  <div class="col-12 py-4 px-3">
+    <label class="block text-sm font-medium text-gray-700">
+      Annual Membership
+  </label>
+      <div class="row justify-content-around">
+          <div class="col-sm-12 col-md-4 mb-3">
+              <label class="form-label" for="employeeFirstName"><span
+                  class="required">Fee</span></label>
+              <input type="text" id="employeeFirstName" name="fee" class="form-control" />
+          </div>
+          <div class="col-sm-12 col-md-4 mb-3">
+            <label class="form-label" for="employeeDateofJoin">Date
+            </label>
+          <input type="date" class="form-control" name="transact_date" id="employeeDateofJoin" />
+          </div>
+          <div class="col-sm-12 col-md-4 mb-3">
+              <label class="form-label" for="employeeLastName"><span
+                  class="required">Receipt Number</span></label>
+              <input type="text" id="employeeLastName" name="reciept_num" class="form-control" />
+          </div>
+          <div class="col-sm-12 col-md-12 mb-3">
+            <label class="form-label" for="employeeHomeCity">Blood Group</label>
+            <select id="employeeHomeCountry" name="blood_grp" class="form-control">
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="O-">O-</option>
+                <option value="B+">B+</option>
+                <option value="O+">O+</option>
+                <option value="A+">A+</option>
+                <option value="A1+">A1+</option>
+                <option value="A1B-">A1B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="A1B+">A1B+</option>
+                <option value="A2+">A2+</option>
+                <option value="A2B-">A2B-</option>
+                <option value="A2B+">A2B+</option>
+                <option value="A1-">A1-</option>
+            </select>
+                
+        </div>
+        
+      </div>
+  </div>
+            <div id="employeePhotoUploader">
+              <label class="block text-sm font-medium text-gray-700">
+                  Add your Portrait
+              </label>
+              <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md" id="drop_zone_2" ondrop="dropHandlerPortrait(event);" ondragover="dragOverHandler(event);">
+                  <div class="space-y-1 text-center">
+                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                          <path
+                              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <div class="flex text-sm text-gray-600">
+                          <label for="file-upload-portrait" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                              <span>Upload a file</span>
+                              <input id="file-upload-portrait" name="file-upload" type="file" accept="image/*"
+                                  class="sr-only">
+                          </label>
+                          <p class="pl-1">or drag and drop</p>
+                      </div>
+                      <p class="text-xs text-gray-500">
+                          PNG, JPG, GIF up to 3MB
+                      </p>
+                  </div>
+              </div>
+              <br>
+          </div>
+          <div class="w-full hidden mb-3" id="employeePhotoDisplay">
+              <img src="https://cultivatedculture
+              .com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Madeline-Mann.jpeg" id="employeePhotoisplayHref" class="w-24 h-24 rounded-full mb-3" alt="Profile Photo">
+              <button type="button" id="deleteImagePortrait" class="bg-red-600 hover:bg-red-700 text-white items-center px-4 py-2 border border-transparent rounded-md border-gray-300 shadow-sm text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <i class="fa-solid fa-trash mr-3"></i> Delete
+              </button>
+          </div>
+          <div class="col-sm-12 col-md-12 mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="employeeSalaryVariableCheck">
+            <label class="form-check-label" for="employeeSalaryVariableCheck">
+              <b>I confirm that all the above information is correct. Fagree to take membership subject to the rules and regulations of the association</b>
+          </label>
+        </div>
+      </div>
+  </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+    <footer class="text-center text-white"  >
+      <!-- Copyright -->
+        <div class="text-center p-3" style="background-color:#fff;">
+          <a class="text-dark" href="#"><marquee direction="right">© 2023 Copyright : [Karnataka State Pre-Graduate College’s Lecturer’s Association] [Bangalore]</marquee></a>
+        </div>
+        
+        <!-- Copyright -->
+      </footer>
+      
+      <!-- MDB Lib's -->
+      <script type="text/javascript" src="js/mdb.min.js"></script>
+
+            <!-- Custom scripts -->
+            <script>
+              $(function() {
+                // Handle form submission
+                $('#formAuthentication').submit(function(event) {
+                  event.preventDefault();
+                  var data = {
+                    full_name:$('#full_name').val(),
+                    content_subject:$('#content_subject').val(),
+                    eligibility:$('#eligibility').val(),
+                    clg_street_name:$('#clg_street_name').val(),
+                    clg_state:$('#clg_state').val(),
+                    clg_city:$('#clg_city').val(),
+                    clg_contry:$('#clg_contry').val(),
+                    clg_zip_code:$('#clg_zip_code').val(),
+                    clg_code:$('#clg_code').val(),
+                    emp_street_name:$('#emp_street_name').val(),
+                    emp_state:$('#emp_state').val(),
+                    emp_city:$('#emp_city').val(),
+                    emp_contry:$('#emp_contry').val(),
+                    emp_zip_code:$('#emp_zip_code').val(),
+                    emp_contact:$('#emp_contact').val(),
+                    emp_alt_contact:$('#emp_alt_contact').val(),
+                    issue_date:$('#issue_date').val(),
+                    joining_date:$('#joining_date').val(),
+                    fee:$('#fee').val(),
+                    transact_date:$('#transact_date').val(),
+                    reciept_num:$('#reciept_num').val(),
+                    blood_grp:$('#blood_grp').val(),
+                  };
+                  console.log(data);
+                  $.ajax({
+                    method: 'POST',
+                    url: 'http://localhost:5000/register/' + data['emp_contact'],
+                    
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function(response) {
+                      console.log(response);
+                      alert('Data Saved successful');
+                        // Redirect to id gen page and have to check with the link
+                      window.location = 'https://www.geeksforgeeks.org';
+                    }, 
+                    error: function(xhr, status, error) {
+                      alert('An error occurred: ' + error);
+                    }
+                  });
+                });
+              });
+            </script>
+        
+
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js"></script>
+  <script src="js/Validation.js"></script>  
+
+</html>
+
