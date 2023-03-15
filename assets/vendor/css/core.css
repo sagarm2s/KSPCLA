@@ -307,16 +307,18 @@ th {
   text-align: inherit;
   text-align: -webkit-match-parent;
 }
-
+th,td{
+  text-align: center;
+}
 thead,
 tbody,
 tfoot,
 tr,
 td,
 th {
-  border-color: inherit;
-  border-style: solid;
-  border-width: 0;
+  /* border-color: inherit; */
+  border-style:groove;
+  /* border-width: 0; */
 }
 
 label {

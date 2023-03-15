@@ -45,6 +45,8 @@
     <!-- Page CSS -->
     <!-- Page -->
     <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css" />
+    <!-- below provided style.css file is coded by surya -->
+    <link rel="stylesheet" href="style.css">
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 
@@ -64,63 +66,31 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="index.html" class="app-brand-link gap-2">
-
-                  <span class="app-brand-text demo text-body fw-bolder">ID Card Generator</span>
-                </a>
+                  <span class="app-brand-text demo text-body fw-bolder">ID Card</span>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Adventure starts here 🚀</h4>
-              <p class="mb-4">Make your management easy and fun!</p>
-
-              <form id="formAuthentication" class="mb-3" method="PUT">
-                <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="username"
-                    name="full_name"
-                    placeholder="Enter your username"
-                    autofocus
-                  />
+              <div class="flex-row-between">
+                <div>
+                  <h4 id="name" class="mb-2">Surya Dasari</h4>
+                  <p id="eligibility" class="mb-4">Teaching field : thermal</p>
                 </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" name="email_id" placeholder="Enter your email" />
-                </div>
-                <div class="mb-3 form-password-toggle">
-                  <label class="form-label" for="password">Password</label>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="password"
-                    />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                    <label class="form-check-label" for="terms-conditions">
-                      I agree to
-                      <a href="javascript:void(0);">privacy policy & terms</a>
-                    </label>
-                  </div>
-                </div>
-                <button class="btn btn-primary d-grid w-100" id="submitButton">Sign up</button>
-              </form>
-
-              <p class="text-center">
-                <span>Already have an account?</span>
-                <a href="auth-login-basic.html">
-                  <span>Sign in instead</span>
-                </a>
+                <img class="dp" src="./assets/img/avatars/6522516.png" alt="profile pic">
+              </div>
+              <hr class="line"/>
+              <p id="subject">
+                College code: GIET Engineering College
+              </p>
+              <p id="clg_code">
+                College code: GIET Engineering College
+              </p>
+              <p id="clg_add">
+                College Address: street name, city, state, country, zipcode.
+              </p>
+              <p id="number">
+                Contact Number: 6300524244
+              </p>
+              <p id="bldgrp">
+                Blood Group: Z+
               </p>
             </div>
           </div>
@@ -130,45 +100,37 @@
     </div>
 
     <!-- / Content -->
+    <!-- below script element developer by surya -->
     <script>
-      $(function() {
-        // Handle form submission
-        $('#formAuthentication').submit(function(event) {
-          event.preventDefault();
-          console.log("here");
-          var data = {
-            full_name:$('#username').val(),
-            email_id: $('#email').val(),
-            password: $('#password').val(),
-
-          };
-          console.log(data);
-          $.ajax({
-            method: 'PUT',
-            url: 'http://localhost:5000/login',
-            
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function(response) {
-              console.log(response);
-              if (response.success) {
-                console.log("Registration Successfull");
-                alert("User Registered Successfully")
-                // Redirect to admin dashboard
-                window.location='https://meet.google.com/zpr-gamq-hij'
-                event.preventDefault();
-
-              } else {
-}
-            }, 
-            error: function(xhr, status, error) {
-              alert('An error occurred: ' + error);
-            }
-          });
-        });
-      });
+      const urlParams = (window.location.href);
+      const params = urlParams.split('?')[1];
+      const param = params.split('=')[1];
+      // console.log(param);
+      function cardGen(user){
+        var name = document.getElementById('name');
+        name.textContent = user['full_name'];
+        var eligibility = document.getElementById('eligibility');
+        eligibility.textContent = user['eligibility'];
+        var subject = document.getElementById('subject');
+        subject.textContent ='Teaching Field: ' + user['content_subject'];
+        var clg_code = document.getElementById('clg_code');
+        clg_code.textContent ='College Code: '+ user['clg_code'];
+        var clg_add = document.getElementById('clg_add');
+        clg_add.textContent ='College Address: '+ user['clg_street_name']+', '+user['clg_city']+', '+user['clg_state']+', '+user['clg_contry']+', '+user['clg_zip_code'];
+        var number = document.getElementById('number');
+        number.textContent = user['emp_contact'];
+        var bldgrp = document.getElementById('bldgrp');
+        bldgrp.textContent = user['blood_grp'];
+        var name = document.getElementById('name');
+        name.textContent = user['full_name'];
+      }
     </script>
-
+    <script>
+      fetch('http://localhost:5000/admin/dashboard/'+param)
+      .then(x => x.json())
+      .then(y => cardGen(y))
+    </script>
+<!-- upto here by surya -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
@@ -185,7 +147,6 @@
     <script src="../assets/js/main.js"></script>
 
     <!-- Page JS -->
-<a href=""></a>
     <!-- Place this tag in your head or just before your close body tag. -->
   </body>
 </html>

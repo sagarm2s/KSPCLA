@@ -162,7 +162,7 @@
     <!-- NavBar End -->
 
 <!-- Modal -->
-<form id="formAuthentication" method="post" onsubmit="return validateform()">
+<form id="formAuthentication" method="post" enctype="multipart/form-data">
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <!-- <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down modal-dialog-scrollable"> -->
       <div class="modal-dialog modal-dialog-centered modal-fullscreen modal-fullscreen-sm-down modal-dialog-scrollable">
@@ -184,7 +184,7 @@
                     <div class="col-sm-12 col-md-12 mb-3">
                         <label class="form-label" for="employeeFirstName"><span
                             class="required">Full Name</span></label>
-                        <input type="text" id="employeeFirstName" name="full_name" value='' onkeydown="return myf(event)"class="form-control"  /><b id="error" style="color:red;display:none">Plese Enter Only Alphabets Not Special Character and Spaces Allowed..</b>
+                        <input type="text" id="full_name" name="full_name" value='' onkeydown="return myf(event)"class="form-control"  /><b id="error" style="color:red;display:none">Plese Enter Only Alphabets Not Special Character and Spaces Allowed..</b>
                     </div>
                  
                 </div>
@@ -277,7 +277,7 @@
   <div class="col-sm-12 col-md-6 mb-3">
     <label class="form-label" for="employeeOfficialNumber"><span
         class="required">Contact Number</span></label>
-    <input type="text" id="employeeOfficialNumber" name="emp_contact"  value=''
+    <input type="text" id="emp_contact" name="emp_contact"  value=''
     onkeypress='return isNumber(event)' minlength="10" maxlength="10"  class="form-control" /><span id="error" style="color:red;display:none">Plese Enter Only Alphabets...</span>
   </div>
   <div class="col-sm-12 col-md-6 mb-3">
@@ -340,39 +340,27 @@
         
       </div>
   </div>
-            <div id="employeePhotoUploader">
-              <label class="block text-sm font-medium text-gray-700">
-                  Add your Portrait
-              </label>
-              <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md" id="drop_zone_2" ondrop="dropHandlerPortrait(event);" ondragover="dragOverHandler(event);">
-                  <div class="space-y-1 text-center">
-                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                          <path
-                              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                      <div class="flex text-sm text-gray-600">
-                          <label for="file-upload-portrait" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                              <span>Upload a file</span>
-                              <input id="file-upload-portrait" name="file-upload" type="file" accept="image/*"
-                                  class="sr-only">
-                          </label>
-                          <p class="pl-1">or drag and drop</p>
-                      </div>
-                      <p class="text-xs text-gray-500">
-                          PNG, JPG, GIF up to 3MB
-                      </p>
-                  </div>
-              </div>
-              <br>
-          </div>
-          <div class="w-full hidden mb-3" id="employeePhotoDisplay">
-              <img src="https://cultivatedculture
-              .com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Madeline-Mann.jpeg" id="employeePhotoisplayHref" class="w-24 h-24 rounded-full mb-3" alt="Profile Photo">
-              <button type="button" id="deleteImagePortrait" class="bg-red-600 hover:bg-red-700 text-white items-center px-4 py-2 border border-transparent rounded-md border-gray-300 shadow-sm text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  <i class="fa-solid fa-trash mr-3"></i> Delete
-              </button>
-          </div>
+  <div class="app">
+    <div class="heading">
+      <h1>File Upload Preview</h1>
+      <p>Upload a file to continue.</p>
+    </div>
+  
+    <div class="preview">
+      <div>
+        <img src="./assets/img/avatars/demo.jpeg" alt="" class="preview-image" accept="image/*">
+      </div>
+    </div>
+  
+    <div class="button_section">
+      <div class="button_group">
+        <label for="input1">Upload file &nbsp; <i class="fa fa-upload" aria-hidden="true"></i></label>
+        <input type="file" name="img" id="input1" accept="image/*">
+      </div>
+  
+      <button class="clear_button"><span>Clear</span><i class="fa fa-trash" aria-hidden="true"></i></button>
+    </div>
+  </div>
           <div class="col-sm-12 col-md-12 mb-3">
             <input class="form-check-input" type="checkbox" role="switch" id="employeeSalaryVariableCheck">
             <label class="form-check-label" for="employeeSalaryVariableCheck">
@@ -401,50 +389,177 @@
       <!-- MDB Lib's -->
       <script type="text/javascript" src="js/mdb.min.js"></script>
 
-            <!-- Custom scripts -->
-            <script>
+      <!-- new code upto Custom scripts -->
+      <script>
+        // Get the checkbox element
+        const checkbox = document.getElementById("employeeSalaryVariableCheck");
+        
+        // Get the receipt number input element
+        const receiptNumInput = document.getElementById("employeeLastName");
+
+        let objectURL;
+        
+        // Add an event listener to the checkbox
+        checkbox.addEventListener("click", function() {
+          // Check if the checkbox is checked
+          if (checkbox.checked) {
+            // Generate the receipt number using the current date and time
+            const date = new Date();
+            const receiptNum = date.getHours().toString().padStart(2, '0') + date.getDate().toString().padStart(2, '0') + date.getMinutes().toString().padStart(2, '0') + (date.getMonth() + 1).toString().padStart(2, '0') + date.getSeconds().toString().padStart(2, '0') + date.getFullYear().toString();
+            
+            // Set the value of the receipt number input
+            receiptNumInput.value = receiptNum;
+            
+            // Enable the receipt number input
+            receiptNumInput.disabled = false;
+          } else {
+            // Clear the value of the receipt number input
+            receiptNumInput.value = "";
+            
+            // Disable the receipt number input
+            receiptNumInput.disabled = true;
+          }
+        });
+      
+       
+        // <div class="col-sm-12 col-md-6 mb-3">
+        //   <label class="form-label" for="employeeDateofJoin">Date of Issue</label>
+        //   <input type="date" class="form-control" name="issue_date" id="employeeDateofJoin" />
+        // </div>
+       
+      
+        $(function(){
+          var dtToday = new Date();
+          
+          var month = dtToday.getMonth() + 1;
+          var day = dtToday.getDate();
+          var year = dtToday.getFullYear();
+          if(month < 10)
+              month = '0' + month.toString();
+          if(day < 10)
+              day = '0' + day.toString();
+          
+          var maxDate = year + '-' + month + '-' + day;
+      
+          // or instead:
+          // var maxDate = dtToday.toISOString().substr(0, 10);
+      
+      /*     alert(maxDate);
+           */    $('.disableDate').attr('min', maxDate);
+      });
+      
+      
+      
+      
+      //for uploading the image
+      
+          const fileInputElement = document.querySelector("input#input1");
+      const clearButton = document.querySelector(".clear_button");
+      const imagePreview = document.querySelector(".preview-image");
+      
+      
+      const changePreviewOnUpload = (fileName, fileType, fileSize, previewURL) => {
+        if (fileType.includes("image")) {
+          imagePreview.setAttribute("src", previewURL);
+        } else {
+          imagePreview.setAttribute("src", "images/placeholder-file.png");
+        }
+       /*  previewDescription.textContent = fileName;
+        previewSize.textContent = `${Math.round(fileSize / 1024)} kb`; */
+      
+        clearButton.style.display = "inline-flex";
+      };
+      
+      fileInputElement.addEventListener("change", (e) => {
+        console.log(fileInputElement.files[0]);
+        const fileObject = fileInputElement.files[0];
+        objectURL = URL.createObjectURL(fileObject);
+        console.log(objectURL);
+      
+        changePreviewOnUpload(
+          fileObject.name,
+          fileObject.type,
+          fileObject.size,
+          objectURL
+        );
+      });
+      
+      clearButton.addEventListener("click", (e) => {
+        imagePreview.setAttribute("src", "images/placeholder-image.png");
+      
+       /*  previewDescription.textContent = "";
+        previewSize.textContent = "";
+         */
+        clearButton.style.display = "none";
+      });
+      
               $(function() {
                 // Handle form submission
                 $('#formAuthentication').submit(function(event) {
+                  // console.log(objectURL)
                   event.preventDefault();
                   var data = {
-                    full_name:$('#full_name').val(),
-                    content_subject:$('#content_subject').val(),
-                    eligibility:$('#eligibility').val(),
-                    clg_street_name:$('#clg_street_name').val(),
-                    clg_state:$('#clg_state').val(),
-                    clg_city:$('#clg_city').val(),
-                    clg_contry:$('#clg_contry').val(),
-                    clg_zip_code:$('#clg_zip_code').val(),
-                    clg_code:$('#clg_code').val(),
-                    emp_street_name:$('#emp_street_name').val(),
-                    emp_state:$('#emp_state').val(),
-                    emp_city:$('#emp_city').val(),
-                    emp_contry:$('#emp_contry').val(),
-                    emp_zip_code:$('#emp_zip_code').val(),
-                    emp_contact:$('#emp_contact').val(),
-                    emp_alt_contact:$('#emp_alt_contact').val(),
-                    issue_date:$('#issue_date').val(),
-                    joining_date:$('#joining_date').val(),
-                    fee:$('#fee').val(),
-                    transact_date:$('#transact_date').val(),
-                    reciept_num:$('#reciept_num').val(),
-                    blood_grp:$('#blood_grp').val(),
+                    full_name:$("[name='full_name']").val(),
+                    content_subject:$("[name='content_subject']").val(),
+                    eligibility:$("[name='eligibility']").val(),
+                    clg_street_name:$("[name='clg_street_name']").val(),
+                    clg_state:$("[name='clg_state']").val(),
+                    clg_city:$("[name='clg_city']").val(),
+                    clg_contry:$("[name='clg_contry']").val(),
+                    clg_zip_code:$("[name='clg_zip_code']").val(),
+                    clg_code:$("[name='clg_code']").val(),
+                    emp_street_name:$("[name='emp_street_name']").val(),
+                    emp_state:$("[name='emp_state']").val(),
+                    emp_city:$("[name='emp_city']").val(),
+                    emp_contry:$("[name='emp_contry']").val(),
+                    emp_zip_code:$("[name='emp_zip_code']").val(),
+                    emp_contact:$("[name='emp_contact']").val(),
+                    emp_alt_contact:$("[name='emp_alt_contact']").val(),
+                    issue_date:$("[name='issue_date']").val(),
+                    joining_date:$("[name='joining_date']").val(),
+                    fee:$("[name='fee']").val(),
+                    transact_date:$("[name='transact_date']").val(),
+                    reciept_num:$("[name='reciept_num']").val(),
+                    blood_grp:$("[name='blood_grp']").val(),
                   };
                   console.log(data);
+                  let img = document.getElementById("file-upload-portrait"); // img file checking here..
+                  let imgFile = document.getElementById('input1');
+                  console.log('img: ', imgFile.files[0]);
+                  // let formData = new FormData();
+                  // formData.append('file', imgFile.files[0]);
+                  //       console.log("sd",formData)
+                  // console.log(typeof img.value);
+                  // console.log('img uploading', objectURL);
                   $.ajax({
                     method: 'POST',
-                    url: 'http://localhost:5000/register/' + data['emp_contact'],
+                    url: 'http://localhost:5000/register/success/' + data['emp_contact'],
                     
                     data: JSON.stringify(data),
                     contentType: 'application/json',
                     success: function(response) {
                       console.log(response);
                       alert('Data Saved successful');
-                        // Redirect to id gen page and have to check with the link
-                      window.location = 'https://www.geeksforgeeks.org';
+                        // Redirect to id gen page and have to check with the link data: JSON.stringify({"file": objectURL}),
+                      window.location = 'http://localhost:3000/login.html?id=' + data['emp_contact'];
                     }, 
                     error: function(xhr, status, error) {
+                      console.log('img uploading', objectURL);
+                      
+                      $.ajax({
+                        method: 'POST',
+                        url: 'http://127.0.0.1:5000/dp',
+                        data: JSON.stringify({'file':imgFile}),
+                    
+                        contentType: 'multipart/form-data',
+                        success: function(response){
+                          console.log('success');
+                        } ,
+                        error: function(xhr, status, error) {
+                          console.log('failed..' + error);
+                          console.log(data);
+                        } 
+                      });
                       alert('An error occurred: ' + error);
                     }
                   });
@@ -458,4 +573,3 @@
   <script src="js/Validation.js"></script>  
 
 </html>
-

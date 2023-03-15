@@ -1,0 +1,21 @@
+.dp{
+    height: 6rem;
+    width: 6rem;
+    display: inline;
+}
+
+.flex-row-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.line{
+    height: 0.1rem !important;
+    color: cadetblue !important;
+}
+
+.card{
+    max-width: 20rem;
+    margin: auto;
+}
